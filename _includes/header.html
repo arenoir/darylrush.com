@@ -1,0 +1,34 @@
+{% assign current = page.url | downcase | split: '/' %}
+
+<div class="header">
+  <h1 id="site-title">
+    <a href="/">
+      Daryl M. Rush Builders
+    </a>
+  </h1>
+  
+  <div class="address">
+    3631 San Pablo Ave<br/>
+    Emeryville, CA 94608<br/>
+    License: 314184<br/>
+    510.654.1050 (p)<br/>
+    510.654.1099 (f)
+    <br />
+    <a href="mailto:info@darylrush.com">SEND E-MAIL</a>
+  </div>
+
+  <ul class="navigation">
+    <li>
+      <a {% if current[1] == 'index.html' %}class="active"{% endif %} href="/">ABOUT</a>
+    </li>
+    <li>
+      <a {% if current[1] == 'photo_galleries' %}class="active"{% endif %} href="/photo_galleries/">PHOTO GALLERIES</a>
+    </li>
+    <li>
+      <a {% if current[1] == 'videos' %}class="active"{% endif %} href="/videos/">VIDEOS</a>
+    </li>
+  </ul>  
+</div>
+
+
+

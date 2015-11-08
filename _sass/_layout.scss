@@ -1,0 +1,138 @@
+#container {
+  width:820px;
+  margin:10px auto;
+  text-align:left;
+  padding:10px;
+}
+
+
+.header {
+	position: relative;
+	overflow: hidden;
+	width: 820px;
+	padding:10px;
+  margin:10px auto;
+
+	h1 { 
+		text-align: left;
+		float:left;
+  	margin:10px 0 25px 0;
+
+		a {
+			font-family: $secondary-font-family;
+			text-decoration: none;
+			font-size: 34px;
+			color: $text-color;
+      background: transparent;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	} 
+
+	.address {
+  	position: absolute;
+  	top: 0;
+  	right: 0;  
+  	width:120px;
+  	text-align:left;
+  	font-size:10px;
+    font-family: monospace;
+    line-height: 14px;
+  	font-weight:normal;
+  	color:#000;
+  	margin-top:12px;
+  	white-space: nowrap;
+
+  	a {
+  		color:#000;
+  		background:#ffff06;
+    	font-size:10px;
+    	font-family: monospace;
+    	line-height: 14px;
+    	font-weight:normal;
+		}
+	}
+
+	.navigation { 
+		list-style:none;
+		display: block;
+		width: 100%;
+		padding: 0;
+		margin: 0;
+		overflow: hidden;
+		border-bottom: 1px solid #999;
+
+
+		li {
+	  	padding:0;
+	  	margin: 0;
+	  	overflow: hidden;
+	  	line-height: 2;
+	  	list-style-type:none;
+	  	float:left;
+	  	margin-right: 20px;
+
+	  	
+	  	a {
+	  		line-height: 2;
+	  		color:#000;
+	  		font-family:helvetica;
+	  		font-size:10pt;
+	  		text-decoration:none;
+	  		background:transparent;
+
+	  		&:hover {
+	  			text-decoration:underline;
+				}
+				
+				&:active {
+	  			color:#2EA4A0;
+				}
+
+				&.active {
+	  			color:#000;
+	  			background:#fff;
+	  			font-weight: bold;
+				}
+			}
+		}
+	}
+}
+
+.page-content {
+	width:820px;
+  margin:10px auto;
+  text-align:left;
+  padding:10px;
+}
+
+.vimeo-player {
+  text-align: center;
+  margin-bottom: 20px;
+  iframe {
+    margin: 0 auto;
+  }
+}
+
+.videos {
+  padding: 0;
+  margin: 0;
+  li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    .title {
+      text-transform: uppercase;
+    }
+    
+    .thumbnail {
+      border: 1px solid #ccc;
+      padding: 2px;
+      float: left;
+      margin-right: 20px;
+    }
+  }
+}
