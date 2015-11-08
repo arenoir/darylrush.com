@@ -19,7 +19,7 @@
   	margin:10px 0 25px 0;
 
 		a {
-			font-family: $secondary-font-family;
+			font-family: $logo-font-family;
 			text-decoration: none;
 			font-size: 34px;
 			color: $text-color;
@@ -115,6 +115,10 @@
     margin: 0 auto;
   }
 
+  .title {
+    text-align: left;
+  }
+  
   .description {
     margin-top: 15px;
     text-align: left;
