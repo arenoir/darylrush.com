@@ -1,1 +1,8 @@
-<iframe id="player_1" src="http://player.vimeo.com/video/<%=model.get('id')%>?api=1&amp;player_id=vimeoplayer" width="540" height="304" frameborder="0"></iframe>
+
+<iframe id="vimeoplayer" src="http://player.vimeo.com/video/<%=model.get('id')%>?api=1&amp;player_id=vimeoplayer" width="800" height="455" frameborder="0"></iframe>
+
+<div class="description">
+  <%=model.get('description')%>
+  <br/>
+  <a href="#">Back to list</a>
+</div>

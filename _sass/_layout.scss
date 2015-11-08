@@ -9,7 +9,7 @@
 .header {
 	position: relative;
 	overflow: hidden;
-	width: 820px;
+	width: 800px;
 	padding:10px;
   margin:10px auto;
 
@@ -102,10 +102,10 @@
 }
 
 .page-content {
-	width:820px;
-  margin:10px auto;
+	width:800px;
+  margin:0 auto;
   text-align:left;
-  padding:10px;
+  padding: 0 10px;
 }
 
 .vimeo-player {
@@ -113,6 +113,12 @@
   margin-bottom: 20px;
   iframe {
     margin: 0 auto;
+  }
+
+  .description {
+    margin-top: 15px;
+    text-align: left;
+    max-width: 600px;
   }
 }
 

@@ -3,14 +3,10 @@ class Site.Views.VimeoVideos extends Backbone.View
   className: 'videos'
 
   initialize: (options) ->
-    @collection.on "update", @reRender, @
+    @collection.on "update", @render, @
     return
 
   render: ->
-    @$el.html('loading........')
-    @
-
-  reRender: ->
     @$el.empty()
     @collection.forEach (video) =>
       view = new Site.Views.VimeoVideo( model: video, collection: @collection )

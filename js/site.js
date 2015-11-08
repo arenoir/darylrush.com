@@ -133,15 +133,10 @@
     VimeoVideos.prototype.className = 'videos';
 
     VimeoVideos.prototype.initialize = function(options) {
-      this.collection.on("update", this.reRender, this);
+      this.collection.on("update", this.render, this);
     };
 
     VimeoVideos.prototype.render = function() {
-      this.$el.html('loading........');
-      return this;
-    };
-
-    VimeoVideos.prototype.reRender = function() {
       this.$el.empty();
       this.collection.forEach((function(_this) {
         return function(video) {
@@ -204,7 +199,7 @@
   });
 
 }).call(this);
-(function() { this.JST || (this.JST = {}); this.JST["site/templates/vimeo_player"] = function(obj){var __p=[],print=function(){__p.push.apply(__p,arguments);};with(obj||{}){__p.push('<iframe id="player_1" src="http://player.vimeo.com/video/', model.get('id'),'?api=1&amp;player_id=vimeoplayer" width="540" height="304" frameborder="0"></iframe>\n');}return __p.join('');};
+(function() { this.JST || (this.JST = {}); this.JST["site/templates/vimeo_player"] = function(obj){var __p=[],print=function(){__p.push.apply(__p,arguments);};with(obj||{}){__p.push('\n\n<iframe id="vimeoplayer" src="http://player.vimeo.com/video/', model.get('id'),'?api=1&amp;player_id=vimeoplayer" width="800" height="455" frameborder="0"></iframe>\n\n<div class="description">\n  ', model.get('description'),'\n  <br/>\n  <a href="#">Back to list</a>\n</div>\n');}return __p.join('');};
 }).call(this);
-(function() { this.JST || (this.JST = {}); this.JST["site/templates/vimeo_video"] = function(obj){var __p=[],print=function(){__p.push.apply(__p,arguments);};with(obj||{}){__p.push('<div class="thumbnail">\n  <img src="', model.get('thumbnail_medium'),'"/>\n</div>\n<div class="description">\n  ', model.get('description'),'\n</div>\n<div class="title">\n  <a href="#', model.get('id'),'">', model.get('title'),'</a>\n</div>\n');}return __p.join('');};
+(function() { this.JST || (this.JST = {}); this.JST["site/templates/vimeo_video"] = function(obj){var __p=[],print=function(){__p.push.apply(__p,arguments);};with(obj||{}){__p.push('<a href="#', model.get('id'),'">\n  <div class="thumbnail">\n    <img src="', model.get('thumbnail_medium'),'"/>\n  </div>\n</a>\n\n<div class="description">\n  ', model.get('description'),'\n</div>\n<div class="title">\n  <a href="#', model.get('id'),'">', model.get('title'),'</a>\n</div>\n');}return __p.join('');};
 }).call(this);

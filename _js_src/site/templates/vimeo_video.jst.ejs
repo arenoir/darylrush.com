@@ -1,6 +1,9 @@
-<div class="thumbnail">
-  <img src="<%=model.get('thumbnail_medium')%>"/>
-</div>
+<a href="#<%=model.get('id')%>">
+  <div class="thumbnail">
+    <img src="<%=model.get('thumbnail_medium')%>"/>
+  </div>
+</a>
+
 <div class="description">
   <%=model.get('description')%>
 </div>
