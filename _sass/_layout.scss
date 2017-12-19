@@ -13,7 +13,7 @@
 	padding:10px;
   margin:10px auto;
 
-	h1 { 
+	h1 {
 		text-align: left;
 		float:left;
   	margin:10px 0 25px 0;
@@ -29,12 +29,12 @@
 				text-decoration: none;
 			}
 		}
-	} 
+	}
 
 	.address {
   	position: absolute;
   	top: 0;
-  	right: 0;  
+  	right: 0;
   	width:120px;
   	text-align:left;
   	font-size:10px;
@@ -55,7 +55,7 @@
 		}
 	}
 
-	.navigation { 
+	.navigation {
 		list-style:none;
 		display: block;
 		width: 100%;
@@ -74,7 +74,7 @@
 	  	float:left;
 	  	margin-right: 20px;
 
-	  	
+
 	  	a {
 	  		line-height: 2;
 	  		color:#000;
@@ -86,7 +86,7 @@
 	  		&:hover {
 	  			text-decoration:underline;
 				}
-				
+
 				&:active {
 	  			color:#2EA4A0;
 				}
@@ -118,7 +118,7 @@
   .title {
     text-align: left;
   }
-  
+
   .description {
     margin-top: 15px;
     text-align: left;
@@ -143,12 +143,65 @@
     .title {
       text-transform: uppercase;
     }
-    
+
     .thumbnail {
       border: 1px solid #ccc;
       padding: 2px;
       float: left;
       margin-right: 20px;
+    }
+  }
+}
+
+
+
+.flickr-photosets {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  &__photoset {
+    overflow: hidden;
+
+    &__image {
+      border: 1px solid #ccc;
+      background: #fff;
+      padding: 5px;
+      margin: 0 15px 15px 0;
+      display: inline-block;
+      float: left;
+
+
+      img {
+        width: 200px;
+      }
+    }
+
+    &__description {
+    }
+
+    &__title {
+      text-transform: uppercase;
+    }
+  }
+}
+
+.flickr-photo__thumbnail {
+
+}
+
+.flickr-photoset {
+  &__photos {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+    li {
+      border: 1px solid #ccc;
+      background: #fff;
+      padding: 2px;
+      float: left;
+      margin: 0 5px 5px 0;
     }
   }
 }

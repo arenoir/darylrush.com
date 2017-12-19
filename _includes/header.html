@@ -6,7 +6,7 @@
       Daryl M. Rush Builders
     </a>
   </h1>
-  
+
   <div class="address">
     3631 San Pablo Ave<br/>
     Emeryville, CA 94608<br/>
@@ -19,16 +19,13 @@
 
   <ul class="navigation">
     <li>
-      <a {% if current[1] == 'index.html' %}class="active"{% endif %} href="{{'/' | prepend: site.baseurl}}">ABOUT</a>
+      <a {% if current[1] == 'index.html' %}class="active"{% endif %} href="{{'' | prepend: site.baseurl}}">ABOUT</a>
     </li>
     <li>
-      <a {% if current[1] == 'photo_galleries' %}class="active"{% endif %} href="{{'/photo_galleries/' | prepend: site.baseurl}}">PHOTO GALLERIES</a>
+      <a {% if current[1] == 'photo-galleries' %}class="active"{% endif %} href="{{'photo-galleries/' | prepend: site.baseurl}}">PHOTO GALLERIES</a>
     </li>
     <li>
-      <a {% if current[1] == 'videos' %}class="active"{% endif %} href="{{'/videos/' | prepend: site.baseurl}}">VIDEOS</a>
+      <a {% if current[1] == 'videos' %}class="active"{% endif %} href="{{'videos/' | prepend: site.baseurl}}">VIDEOS</a>
     </li>
-  </ul>  
+  </ul>
 </div>
-
-
-

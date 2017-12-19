@@ -1,0 +1,15 @@
+<div class="flickr-photosets__photoset">
+  <a class="flickr-photosets__photoset__image" href="#/gallery/<%=model.get('id')%>">
+    <img src="<%=model.urlM()%>" alt="" />
+  </a>
+
+  <p class="flickr-photosets__photoset__description">
+    <%=model.description()%>
+  </p>
+
+  <br/>
+
+  <a class="flickr-photosets__photoset__title" href="#/gallery/<%=model.get('id')%>">
+    <%=model.title()%>
+  </a>
+</div>
