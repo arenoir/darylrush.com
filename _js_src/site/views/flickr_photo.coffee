@@ -1,5 +1,4 @@
 class Site.Views.FlickrPhoto extends Backbone.View
-  tagName: 'div'
   className: 'flickr-photo'
 
   render: ->

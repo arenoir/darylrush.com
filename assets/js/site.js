@@ -33,6 +33,16 @@
       return 'https://farm' + this.get('farm') + '.staticflickr.com/' + this.get('server') + '/' + this.get('id') + '_' + this.get('secret') + '_' + size + '.jpg';
     };
 
+    FlickrPhoto.prototype.description = function() {
+      var description;
+      description = this.get('description');
+      return description._content;
+    };
+
+    FlickrPhoto.prototype.title = function() {
+      return this.get('title');
+    };
+
     return FlickrPhoto;
 
   })(Backbone.Model);
@@ -180,8 +190,6 @@
       return FlickrPhoto.__super__.constructor.apply(this, arguments);
     }
 
-    FlickrPhoto.prototype.tagName = 'div';
-
     FlickrPhoto.prototype.className = 'flickr-photo';
 
     FlickrPhoto.prototype.render = function() {
@@ -273,10 +281,6 @@
       return FlickrPhotosetPhotos.__super__.constructor.apply(this, arguments);
     }
 
-    FlickrPhotosetPhotos.prototype.tagName = 'ul';
-
-    FlickrPhotosetPhotos.prototype.className = 'flickr-photoset__photos';
-
     FlickrPhotosetPhotos.prototype.initialize = function(options) {
       this.collection.on("sync", this.renderPhotos, this);
     };
@@ -299,7 +303,7 @@
             collection: _this.collection,
             parent: self
           });
-          _this.$el.append(view.render().el);
+          _this.$("#thumbnails-container").append(view.render().el);
         };
       })(this));
       return this.showPhoto(first);
@@ -307,12 +311,10 @@
 
     FlickrPhotosetPhotos.prototype.showPhoto = function(photo) {
       var view;
-      console.log(photo);
       view = new Site.Views.FlickrPhoto({
         model: photo
       });
-      console.log(view);
-      return this.$("#flickr-photo").html(view.render().el);
+      return this.$("#photo-container").html(view.render().el);
     };
 
     return FlickrPhotosetPhotos;
@@ -551,13 +553,13 @@
   });
 
 }).call(this);
-(function() { this.JST || (this.JST = {}); this.JST["site/templates/flickr_photo"] = function(obj){var __p=[],print=function(){__p.push.apply(__p,arguments);};with(obj||{}){__p.push('<img src="', model.imageUrl(size),'" alt="" />\n');}return __p.join('');};
+(function() { this.JST || (this.JST = {}); this.JST["site/templates/flickr_photo"] = function(obj){var __p=[],print=function(){__p.push.apply(__p,arguments);};with(obj||{}){__p.push('<img src="', model.imageUrl(size),'" alt="" />\n\n<h3>', model.title(),'</h3>\n\n<p>\n  ', model.description(),'  \n</p>\n');}return __p.join('');};
 }).call(this);
 (function() { this.JST || (this.JST = {}); this.JST["site/templates/flickr_photo_thumbnail"] = function(obj){var __p=[],print=function(){__p.push.apply(__p,arguments);};with(obj||{}){__p.push('<img src="', model.imageUrl(),'" alt="" />\n');}return __p.join('');};
 }).call(this);
 (function() { this.JST || (this.JST = {}); this.JST["site/templates/flickr_photoset"] = function(obj){var __p=[],print=function(){__p.push.apply(__p,arguments);};with(obj||{}){__p.push('<div class="flickr-photosets__photoset">\n  <a class="flickr-photosets__photoset__image" href="#/gallery/', model.get('id'),'">\n    <img src="', model.urlM(),'" alt="" />\n  </a>\n\n  <p class="flickr-photosets__photoset__description">\n    ', model.description(),'\n  </p>\n\n  <br/>\n\n  <a class="flickr-photosets__photoset__title" href="#/gallery/', model.get('id'),'">\n    ', model.title(),'\n  </a>\n</div>\n');}return __p.join('');};
 }).call(this);
-(function() { this.JST || (this.JST = {}); this.JST["site/templates/flickr_photoset_photos"] = function(obj){var __p=[],print=function(){__p.push.apply(__p,arguments);};with(obj||{}){__p.push('<div id="flickr-photo"></div>\n');}return __p.join('');};
+(function() { this.JST || (this.JST = {}); this.JST["site/templates/flickr_photoset_photos"] = function(obj){var __p=[],print=function(){__p.push.apply(__p,arguments);};with(obj||{}){__p.push('<div id="photo-container"></div>\n<ul id="thumbnails-container"></ul>\n');}return __p.join('');};
 }).call(this);
 (function() { this.JST || (this.JST = {}); this.JST["site/templates/vimeo_player"] = function(obj){var __p=[],print=function(){__p.push.apply(__p,arguments);};with(obj||{}){__p.push('<h2 class="title">\n  ', model.get('title'),' \n</h2>\n\n<iframe id="vimeoplayer" src="http://player.vimeo.com/video/', model.get('id'),'?api=1&amp;player_id=vimeoplayer" width="800" height="455" frameborder="0"></iframe>\n\n<div class="description">\n  ', model.get('description'),'\n  <br/>\n  <a href="#">Back to list</a>\n</div>\n');}return __p.join('');};
 }).call(this);
