@@ -169,7 +169,7 @@
     }
 
     VimeoVideos.prototype.url = function() {
-      return 'http://vimeo.com/api/v2/darylrush/videos.json';
+      return 'https://vimeo.com/api/v2/darylrush/videos.json';
     };
 
     VimeoVideos.prototype.model = Site.Models.VimeoVideo;
