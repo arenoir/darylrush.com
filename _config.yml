@@ -2,7 +2,7 @@
 title: Daryl M. Rush Builders
 email: info@darylrush.com
 description: One of a kind construction.
-baseurl: "/"
+baseurl: ""
 url: "https://darylrush.com"
 markdown: kramdown
 sass:
