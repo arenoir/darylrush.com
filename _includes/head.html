@@ -8,10 +8,10 @@
 
     <link href='https://fonts.googleapis.com/css?family=Karma' rel='stylesheet' type='text/css'>
 
-    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/main.css?{{site.time | date: '%s%N'}}">
     <link rel="canonical" href="{{ page.url | replace:'index.html','' }}">
 
-    <script src="/assets/js/vendor.js"></script>
-    <script src="/assets/js/site.js"></script>
+    <script src="/assets/js/vendor.js?{{site.time | date: '%s%N'}}"></script>
+    <script src="/assets/js/site.js?{{site.time | date: '%s%N'}}"></script>
 
 </head>
