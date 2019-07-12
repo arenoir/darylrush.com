@@ -195,7 +195,7 @@
     FlickrPhoto.prototype.render = function() {
       this.$el.html(JST['site/templates/flickr_photo']({
         model: this.model,
-        size: 'h'
+        size: 'b'
       }));
       return this;
     };
